@@ -41,6 +41,7 @@
 html {
     font-size: 62.5%;
     overflow-x: hidden;
+    scroll-behavior: smooth;
 }
 body {
     direction: rtl;
@@ -145,8 +146,15 @@ body {
     box-shadow: 0 1.2rem 3.2rem rgba(0, 0, 0, 0.03);
 }
 /* test */
-section,
-p {
+section {
+    height: 100vh;
+    background-color: #ffd43b;
+}
+.p {
     padding: 100rem 0;
     background-color: #7a1b24;
+}
+.po {
+    padding: 100rem 0;
+    background-color: #0c8599;
 }

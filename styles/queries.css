@@ -14,9 +14,7 @@
     .icon-mobile-nav {
         font-size: 5.6rem;
     }
-    .header {
-        position: relative;
-    }
+
     .main-nav {
         position: absolute;
         top: 0;
@@ -31,7 +29,7 @@
         pointer-events: none;
         visibility: hidden;
         transition: 0.3s all ease-in-out;
-        transform: translateX(100%);
+        transform: translateX(200%);
     }
     .nav-open .main-nav {
         opacity: 1;
