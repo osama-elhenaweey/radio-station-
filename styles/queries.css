@@ -29,7 +29,7 @@
         pointer-events: none;
         visibility: hidden;
         transition: 0.3s all ease-in-out;
-        transform: translateX(200%);
+        transform: translateX(100%);
     }
     .nav-open .main-nav {
         opacity: 1;

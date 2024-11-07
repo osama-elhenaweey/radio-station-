@@ -3,7 +3,17 @@ const btn = document.querySelector(".btn-mobile-nav");
 btn.addEventListener("click", function () {
     navTog.classList.toggle("nav-open");
 });
-
+// scrolling
+// Smooth scrolling for nav links
+const navLinks = document.querySelectorAll(".main-nav-link");
+navLinks.forEach((link) => {
+    link.addEventListener("click", function (e) {
+        // Close mobile nav after clicking a link
+        if (navTog.classList.contains("nav-open")) {
+            navTog.classList.remove("nav-open");
+        }
+    });
+});
 // sticky navbar
 const sectionHeroEl = document.querySelector(".section-hero");
 const observer = new IntersectionObserver(
