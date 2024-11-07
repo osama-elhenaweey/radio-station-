@@ -13,7 +13,7 @@
     /* Opacity Versions */
     --color-primary-opacity: #e031313a;
     --color-secondary-opacity: #21252931;
-    --color-tertiary-opacity: #f8f9fa88;
+    --color-tertiary-opacity: rgba(248, 249, 250, 0.822);
 
     /* Font Colors */
     --font-color-primary: #f8f9fa; /* White font color */
@@ -53,31 +53,15 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: var(--neutral-light);
-    height: 9.6rem;
+    background-color: var(--color-tertiary);
+    height: 7.4rem;
     padding: 0 4.8rem;
     box-shadow: 0 1.2rem 3.2rem rgba(0, 0, 0, 0.03);
 }
-.header .logo {
-    font-family: "Playwrite GB S", cursive;
-    font-size: 3.4rem;
-    color: var(--primary-red);
-    cursor: pointer;
-}
-.header .logo:hover {
-    animation: fadeInUp 1s forwards;
+.logo-container .logo {
+    width: 9rem;
 }
 
-@keyframes fadeInUp {
-    0% {
-        opacity: 0;
-        transform: translateX(-30px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
 .main-nav-list {
     display: flex;
     align-items: center;
@@ -88,14 +72,29 @@ body {
 .main-nav-link:visited {
     display: inline-block;
     text-decoration: none;
-    font-size: 1.8rem;
+    font-size: 2rem;
     font-weight: 600;
-    color: var(--neutral-dark);
+    color: var(--color-secondary-darker);
     transition: all 0.3s ease-in-out;
+    position: relative;
 }
 .main-nav-link:hover,
 .main-nav-link:active {
-    color: var(--primary-red);
+    color: var(--color-primary-darker);
+}
+.main-nav-link::before {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+    background-color: var(--color-primary-darker);
+}
+.main-nav-link:hover::before {
+    width: 100%;
 }
 /* mobile nav */
 .btn-mobile-nav {
@@ -118,7 +117,7 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    background-color: var(--accent-blue);
+    background-color: var(--color-tertiary-opacity);
     height: 8rem;
     padding-top: 0;
     padding-bottom: 0;
@@ -127,7 +126,7 @@ body {
 }
 /* test */
 section {
-    height: 100vh;
+    height: 91vh;
     background-color: #ffd43b;
 }
 .p {
