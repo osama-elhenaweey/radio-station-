@@ -52,4 +52,11 @@
     .main-nav-link:visited {
         font-size: 3.8rem;
     }
+    .sticky {
+        width: 100%;
+        margin: 0;
+        border-radius: 0px;
+        /* margin-top: 1rem; */
+        transform: scale(1);
+    }
 }
