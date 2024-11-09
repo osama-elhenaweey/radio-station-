@@ -45,19 +45,35 @@
             </button>
         </header>
         <section class="section-hero">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat
-            dignissimos dicta aut reiciendis quidem iusto dolore voluptatibus
-            veritatis facere commodi necessitatibus dolorem molestiae assumenda
-            fugit nobis deleniti nihil inventore odio nisi, odit veniam,
-            delectus, nam sunt. Sit, pariatur. Voluptates perspiciatis
-            doloribus, voluptatibus dolor aliquid quas illum? Natus aspernatur,
-            beatae maiores eligendi laboriosam saepe, unde consequatur ipsam
-            suscipit expedita adipisci ad! Fuga voluptatem sit vel alias
-            assumenda quod quas magnam culpa voluptate tempore. Temporibus,
-            repellat blanditiis atque explicabo autem ducimus minus corporis,
-            vitae optio, tempora quae nesciunt pariatur! Blanditiis amet labore
-            architecto animi quisquam omnis ducimus, quaerat, consectetur
-            praesentium recusandae perspiciatis.
+            <div class="slider">
+                <div class="slide active">
+                    <img src="./images/slides/slide-1.jpg" />
+                    <h2 class="info">Text Here</h2>
+                </div>
+                <div class="slide">
+                    <img src="./images/slides/slide-2.jpg" />
+                    <h2 class="info">Text Here</h2>
+                </div>
+                <div class="slide">
+                    <img src="./images/slides/slide-3.jpg" />
+                    <h2 class="info">Text Here</h2>
+                </div>
+            </div>
+            <!-- buttons prev and next -->
+            <div class="navigation">
+                <button id="next" class="next-btn">
+                    <ion-icon name="arrow-forward-outline"></ion-icon>
+                </button>
+                <button id="prev" class="prev-btn">
+                    <ion-icon name="arrow-back-outline"></ion-icon>
+                </button>
+            </div>
+            <!-- dots -->
+            <div class="navigation-visiablitiy">
+                <div class="slide-dot active"></div>
+                <div class="slide-dot"></div>
+                <div class="slide-dot"></div>
+            </div>
         </section>
         <p class="p" id="p">osama</p>
         <p class="po" id="po">osama</p>
