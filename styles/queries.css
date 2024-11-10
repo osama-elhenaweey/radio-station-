@@ -1,8 +1,24 @@
 /* media query */
+/* 1440 */
+
+@media (width> 90em) {
+    html {
+        font-size: 100%;
+        overflow-x: hidden;
+    }
+}
+/* 900 */
+
+@media (max-width: 56em) {
+    html {
+        font-size: 48%;
+        overflow-x: hidden;
+    }
+}
 /* 700 */
 @media (max-width: 44em) {
     html {
-        font-size: 50%;
+        font-size: 42%;
         overflow-x: hidden;
     }
     body {
