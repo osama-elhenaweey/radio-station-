@@ -15,19 +15,30 @@ navLinks.forEach((link) => {
     });
 });
 // sticky navbar
-const sectionHeroEl = document.querySelector(".section-live");
+const sectionHeroEl = document.querySelector(".section-hero");
+const sectionLiveEl = document.querySelector(".section-live");
+
+let isHeroInView = true;
+let isLiveInView = true;
+
 const observer = new IntersectionObserver(
     function (entries) {
-        const ent = entries[0];
-        if (ent.isIntersecting === false) {
-            console.log(ent);
-            document.querySelector(".header").classList.add("sticky");
-            document.querySelector(".header").classList.remove("nav-open");
-        }
-        if (ent.isIntersecting === true) {
-            console.log(ent);
-            document.querySelector(".header").classList.remove("sticky");
-        }
+        entries.forEach((entry) => {
+            if (entry.target === sectionHeroEl) {
+                isHeroInView = entry.isIntersecting;
+            }
+            if (entry.target === sectionLiveEl) {
+                isLiveInView = entry.isIntersecting;
+            }
+
+            // Only add the sticky class if both sections are out of view
+            if (!isHeroInView && !isLiveInView) {
+                document.querySelector(".header").classList.add("sticky");
+                document.querySelector(".header").classList.remove("nav-open");
+            } else {
+                document.querySelector(".header").classList.remove("sticky");
+            }
+        });
     },
     {
         root: null,
@@ -35,7 +46,10 @@ const observer = new IntersectionObserver(
         rootMargin: "-40px",
     }
 );
+
 observer.observe(sectionHeroEl);
+observer.observe(sectionLiveEl);
+
 // slider
 const sliderContainer = document.querySelector(".section-hero");
 const nextBtn = document.querySelector(".next-btn");
@@ -119,11 +133,9 @@ let repeater = () => {
 // Stop autoplay on mouseover
 sliderContainer.addEventListener("mouseover", () => {
     clearInterval(playSlider);
-    console.log("stoping");
 });
 
 // Resume autoplay on mouseout
 sliderContainer.addEventListener("mouseout", () => {
     repeater();
-    console.log("work again");
 });
