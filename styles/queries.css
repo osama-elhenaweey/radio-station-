@@ -6,6 +6,12 @@
         font-size: 100%;
         overflow-x: hidden;
     }
+    .live-videoWrapper iframe {
+        height: 90%;
+    }
+    .live-link {
+        margin-top: -4rem;
+    }
 }
 /* 900 */
 
@@ -13,6 +19,12 @@
     html {
         font-size: 48%;
         overflow-x: hidden;
+    }
+    .live-videoWrapper iframe {
+        height: 90%;
+    }
+    .live-link {
+        margin-top: -2rem;
     }
 }
 /* 700 */
@@ -26,6 +38,7 @@
     }
     .header {
         background-color: var(--color-secondary);
+        height: 10rem;
     }
     .btn-mobile-nav {
         display: block;
@@ -87,5 +100,8 @@
     }
     .slider .slide .info {
         max-width: 70%;
+    }
+    .live-link {
+        margin-top: 0rem;
     }
 }

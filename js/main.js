@@ -15,7 +15,7 @@ navLinks.forEach((link) => {
     });
 });
 // sticky navbar
-const sectionHeroEl = document.querySelector(".section-hero");
+const sectionHeroEl = document.querySelector(".section-live");
 const observer = new IntersectionObserver(
     function (entries) {
         const ent = entries[0];
