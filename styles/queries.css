@@ -79,4 +79,13 @@
 
         transform: scale(1);
     }
+    .slide-link-container {
+        z-index: 17;
+
+        text-align: center;
+        margin-top: 14rem;
+    }
+    .slider .slide .info {
+        max-width: 70%;
+    }
 }

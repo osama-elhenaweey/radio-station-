@@ -98,6 +98,7 @@ let repeater = () => {
     playSlider = setInterval(function () {
         resetActiveClasses(); // Reset all active classes
         // Remove the active class from the current slide
+
         slides[slideNumber].classList.remove("active");
         slideIcons[slideNumber].classList.remove("active");
 
@@ -114,13 +115,15 @@ let repeater = () => {
         slideIcons[slideNumber].classList.add("active");
     }, 4000);
 };
-repeater();
+
 // Stop autoplay on mouseover
 sliderContainer.addEventListener("mouseover", () => {
     clearInterval(playSlider);
+    console.log("stoping");
 });
 
 // Resume autoplay on mouseout
 sliderContainer.addEventListener("mouseout", () => {
     repeater();
+    console.log("work again");
 });
