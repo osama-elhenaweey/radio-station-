@@ -8,6 +8,9 @@
     body {
         overflow-x: hidden;
     }
+    .header {
+        background-color: var(--color-secondary);
+    }
     .btn-mobile-nav {
         display: block;
     }
@@ -19,7 +22,7 @@
         position: absolute;
         top: 0;
         left: 0;
-        background-color: rgba(255, 255, 255, 0.97);
+        background-color: rgba(0, 0, 0, 0.97);
         display: flex;
         align-items: center;
         justify-content: center;
@@ -30,6 +33,7 @@
         visibility: hidden;
         transition: 0.3s all ease-in-out;
         transform: translateX(100%);
+        z-index: 9;
     }
     .nav-open .main-nav {
         opacity: 1;

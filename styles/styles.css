@@ -11,8 +11,8 @@
     --color-tertiary-darker: #e9ecef; /* Darker gray for subtle contrast */
 
     /* Opacity Versions */
-    --color-primary-opacity: #e031313a;
-    --color-secondary-opacity: #21252931;
+    --color-primary-opacity: rgba(224, 49, 49, 0.227);
+    --color-secondary-opacity: rgba(33, 37, 41, 0.897);
     --color-tertiary-opacity: rgba(248, 249, 250, 0.822);
 
     /* Font Colors */
@@ -53,8 +53,11 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: var(--color-tertiary);
-    height: 7.4rem;
+    background-color: transparent;
+    height: 8rem;
+    width: 100%;
+    position: absolute;
+    z-index: 3;
     padding: 0 4.8rem;
     box-shadow: 0 1.2rem 3.2rem rgba(0, 0, 0, 0.03);
 }
@@ -74,7 +77,7 @@ body {
     text-decoration: none;
     font-size: 2rem;
     font-weight: 600;
-    color: var(--color-secondary-darker);
+    color: var(--color-tertiary-darker);
     transition: all 0.3s ease-in-out;
     position: relative;
 }
@@ -106,7 +109,7 @@ body {
 }
 .icon-mobile-nav {
     font-size: 3.2rem;
-    color: var(--primary-red-dark);
+    color: var(--color-primary-darker);
 }
 .icon-mobile-nav[name="close-outline"] {
     display: none;
@@ -117,7 +120,7 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    background-color: var(--color-tertiary-opacity);
+    background-color: var(--color-secondary-opacity);
     height: 8rem;
     padding-top: 0;
     padding-bottom: 0;
@@ -129,8 +132,12 @@ body {
 }
 /* test */
 section {
-    height: calc(100vh - 7.4rem);
-    position: relative;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #7a1b24;
 }
 .slider {
     width: 100%;
@@ -147,7 +154,7 @@ section {
 }
 .slider .slide.active {
     clip-path: circle(150% at 0 50%);
-    transition: 0.5s ease-in-out;
+    /* transition: 1s ease-in-out; */
 }
 .slider .slide img {
     position: absolute;
@@ -155,12 +162,51 @@ section {
     height: 100%;
     object-fit: cover;
 }
+.overlay-color {
+    background: linear-gradient(
+        to bottom,
+        rgb(14, 14, 15),
+        var(--color-primary-opacity)
+    );
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
 .slider .slide .info {
     position: absolute;
-    color: var(--color-primary-darker);
+    color: var(--color-tertiary-darker);
     width: 100%;
     text-align: center;
-    top: 40%;
+    top: 30%;
+    font-weight: 700;
+    font-size: 6rem;
+    z-index: 999;
+}
+.slide-link-container {
+    position: absolute;
+    top: 70%;
+    z-index: 17;
+
+    width: 100%;
+
+    text-align: center;
+}
+.slide-link {
+    display: inline-block;
+    text-decoration: none;
+    background-color: var(--color-secondary-darker);
+    color: var(--color-tertiary-darker);
+    padding: 1rem 4rem;
+    font-size: 2.4rem;
+    border-radius: 12px;
+    transition: all 0.5s ease-in-out;
+    transform: rotateY(0deg);
+}
+.slide-link:hover {
+    background-color: var(--color-tertiary-darker);
+    color: var(--color-primary-darker);
+    transform: rotateY(360deg);
 }
 .navigation {
     position: absolute;
@@ -180,16 +226,24 @@ body:has(.slider:hover) .navigation,
 }
 .prev-btn,
 .next-btn {
-    border: 2px solid var(--color-secondary-darker);
+    border: 1px solid var(--color-secondary-darker);
+    /* border: none; */
     color: var(--color-secondary-darker);
     border-radius: 50%;
     background-color: var(--color-tertiary-darker);
     font-weight: 700;
-    font-size: 2rem;
-    padding: 0.5rem;
+    font-size: 2.4rem;
+    padding: 1rem;
     display: flex;
     align-items: center;
     cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+.prev-btn:hover,
+.next-btn:hover {
+    color: var(--color-primary-darker);
+    opacity: 0.95;
+    border: 1px solid var(--color-primary-darker);
 }
 .navigation-visiablitiy {
     display: flex;
@@ -198,7 +252,7 @@ body:has(.slider:hover) .navigation,
 .navigation-visiablitiy .slide-dot {
     width: 10px;
     height: 10px;
-    background-color: #0c8599;
+    background-color: var(--color-tertiary-darker);
     transform: translateY(-40px);
     margin: 0 1.5rem;
     border-radius: 15px;
@@ -206,7 +260,7 @@ body:has(.slider:hover) .navigation,
 }
 .navigation-visiablitiy .slide-dot.active {
     width: 30px;
-    background-color: #7a1b24;
+    background-color: var(--color-secondary);
 }
 .p {
     padding: 100rem 0;
