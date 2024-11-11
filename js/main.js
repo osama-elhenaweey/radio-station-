@@ -139,3 +139,22 @@ sliderContainer.addEventListener("mouseover", () => {
 sliderContainer.addEventListener("mouseout", () => {
     repeater();
 });
+
+// see more
+const sectionExploreEl = document.getElementById("explore");
+
+sectionExploreEl.addEventListener("click", function (e) {
+    if (!e.target.classList.contains("see-more-btn")) return;
+
+    // Find the closest `.explore-row-info` ancestor, then query `.explore-info-paragraph` within it
+    const exploreRowInfo = e.target.closest(".explore-row-info");
+    const exploreInfoParagraph = exploreRowInfo
+        ? exploreRowInfo.querySelector(".explore-info-paragraph")
+        : null;
+
+    // Toggle the 'active' class on the paragraph
+    const isActive = exploreInfoParagraph.classList.toggle("active");
+
+    // Set the button text based on the active state
+    e.target.innerHTML = isActive ? "See More" : "See Less";
+});

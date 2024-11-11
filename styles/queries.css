@@ -105,3 +105,14 @@
         margin-top: 0rem;
     }
 }
+/* 550 */
+@media (max-width: 34em) {
+    .explore-row {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+    .explore-row .explore-row-info:last-child {
+        background-color: #0c8599;
+        grid-row: 1 / 2;
+    }
+}
