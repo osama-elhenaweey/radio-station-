@@ -139,8 +139,13 @@ sliderContainer.addEventListener("mouseover", () => {
 sliderContainer.addEventListener("mouseout", () => {
     repeater();
 });
+// see more less buttons
+// Apply 'active' class on page load to all paragraphs
+document.querySelectorAll(".explore-info-paragraph").forEach((paragraph) => {
+    paragraph.classList.remove("active");
+});
 
-// see more
+// Add click event listener for "see more" buttons
 const sectionExploreEl = document.getElementById("explore");
 
 sectionExploreEl.addEventListener("click", function (e) {
@@ -158,6 +163,7 @@ sectionExploreEl.addEventListener("click", function (e) {
     // Set the button text based on the active state
     e.target.innerHTML = isActive ? "اقرا اقل" : "اقرا المزيد";
 });
+
 // playlist
 const main_video = document.querySelector(".main-video .video-frame");
 const main_video_title = document.querySelector(".main-video-title");
