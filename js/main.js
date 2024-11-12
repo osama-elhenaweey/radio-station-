@@ -156,7 +156,7 @@ sectionExploreEl.addEventListener("click", function (e) {
     const isActive = exploreInfoParagraph.classList.toggle("active");
 
     // Set the button text based on the active state
-    e.target.innerHTML = isActive ? "اقرا المزيد" : "اقرا اقل";
+    e.target.innerHTML = isActive ? "اقرا اقل" : "اقرا المزيد";
 });
 // playlist
 const main_video = document.querySelector(".main-video .video-frame");

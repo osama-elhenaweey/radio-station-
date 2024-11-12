@@ -9,109 +9,176 @@
         <title>Radio station</title>
     </head>
     <body>
-        <header id="nav-toggle" class="header">
-            <a href="#"
+        <header id="nav-toggle" class="header" aria-label="Main navigation">
+            <a href="#" aria-label="Radio station home page"
                 ><figure class="logo-container">
-                    <img src="./images/logo.png" alt="" class="logo" /></figure
+                    <img
+                        src="./images/logo.png"
+                        alt="Radio Station Logo"
+                        class="logo"
+                    /></figure
             ></a>
 
-            <!-- <img class="logo">Media Agency</img> -->
-            <nav class="main-nav">
+            <nav class="main-nav" aria-label="Primary">
                 <ul class="main-nav-list">
-                    <li>
-                        <a href="#live" class="main-nav-link">مباشر</a>
-                    </li>
-                    <li>
-                        <a href="#explore" class="main-nav-link">استكشف</a>
-                    </li>
+                    <li><a href="#live" class="main-nav-link">مباشر</a></li>
+                    <li><a href="#explore" class="main-nav-link">استكشف</a></li>
                     <li>
                         <a href="#courses" class="main-nav-link">الدورات</a>
                     </li>
                     <li>
-                        <a href="#contact" class="main-nav-link">تواصل معنا </a>
+                        <a href="#contact" class="main-nav-link">تواصل معنا</a>
                     </li>
                     <li><a href="#about" class="main-nav-link">من نحن</a></li>
                 </ul>
             </nav>
-            <button class="btn-mobile-nav">
+            <button
+                class="btn-mobile-nav"
+                aria-label="Toggle mobile navigation"
+            >
                 <ion-icon
                     class="icon-mobile-nav"
                     name="menu-outline"
+                    aria-hidden="true"
                 ></ion-icon>
                 <ion-icon
                     class="icon-mobile-nav"
                     name="close-outline"
+                    aria-hidden="true"
                 ></ion-icon>
             </button>
         </header>
-        <main class="section-hero">
-            <div class="slider">
-                <div class="slide active">
-                    <figure class="overlay-color"></figure>
-                    <img src="./images/slides/slide-1.jpg" />
-                    <!-- <h2 class="info">الدعاية و الاعلان</h2>
-                    <div class="slide-link-container">
-                        <a href="" class="slide-link">انضم الان</a>
-                    </div> -->
+
+        <main class="section-hero" id="main-content">
+            <div
+                class="slider"
+                aria-roledescription="carousel"
+                aria-label="Promotional slides"
+            >
+                <div class="slide active" aria-label="Slide 1 of 3">
+                    <figure class="overlay-color" aria-hidden="true"></figure>
+                    <picture>
+                        <source
+                            srcset="./images/slides/slide-1.webp"
+                            type="image/webp"
+                        />
+                        <source
+                            srcset="./images/slides/slide-1.jpg"
+                            type="image/jpeg"
+                        />
+                        <img
+                            src="./images/slides/slide-1.jpg"
+                            alt="الدعاية و الاعلان"
+                        />
+                    </picture>
                     <div class="info-container">
                         <h2 class="info">الدعاية و الاعلان</h2>
                         <div class="slide-link-container">
-                            <a href="" class="slide-link">انضم الان</a>
+                            <a href="#" class="slide-link">انضم الان</a>
                         </div>
                     </div>
                 </div>
-                <div class="slide">
-                    <figure class="overlay-color"></figure>
-                    <img src="./images/slides/slide-2.jpg" />
+                <div class="slide" aria-label="Slide 2 of 3">
+                    <figure class="overlay-color" aria-hidden="true"></figure>
+                    <picture>
+                        <source
+                            srcset="./images/slides/slide-2.webp"
+                            type="image/webp"
+                        />
+                        <source
+                            srcset="./images/slides/slide-2.jpg"
+                            type="image/jpeg"
+                        />
+                        <img
+                            src="./images/slides/slide-2.jpg"
+                            alt="الدعاية و الاعلان"
+                        />
+                    </picture>
                     <div class="info-container">
                         <h2 class="info">الدعاية و الاعلان</h2>
                         <div class="slide-link-container">
-                            <a href="" class="slide-link">انضم الان</a>
+                            <a href="#" class="slide-link">انضم الان</a>
                         </div>
                     </div>
                 </div>
-                <div class="slide">
-                    <figure class="overlay-color"></figure>
-                    <img src="./images/slides/slide-3.jpg" />
+                <div class="slide" aria-label="Slide 3 of 3">
+                    <figure class="overlay-color" aria-hidden="true"></figure>
+                    <picture>
+                        <source
+                            srcset="./images/slides/slide-3.webp"
+                            type="image/webp"
+                        />
+                        <source
+                            srcset="./images/slides/slide-3.jpg"
+                            type="image/jpeg"
+                        />
+                        <img
+                            src="./images/slides/slide-3.jpg"
+                            alt="الدعاية و الاعلان"
+                        />
+                    </picture>
                     <div class="info-container">
                         <h2 class="info">الدعاية و الاعلان</h2>
                         <div class="slide-link-container">
-                            <a href="" class="slide-link">انضم الان</a>
+                            <a href="#" class="slide-link">انضم الان</a>
                         </div>
                     </div>
                 </div>
             </div>
+
             <!-- buttons prev and next -->
-            <div class="navigation">
-                <button id="next" class="next-btn">
-                    <ion-icon name="arrow-forward-outline"></ion-icon>
+            <div class="navigation" aria-label="Slide navigation controls">
+                <button id="next" class="next-btn" aria-label="Next slide">
+                    <ion-icon
+                        name="arrow-forward-outline"
+                        aria-hidden="true"
+                    ></ion-icon>
                 </button>
-                <button id="prev" class="prev-btn">
-                    <ion-icon name="arrow-back-outline"></ion-icon>
+                <button id="prev" class="prev-btn" aria-label="Previous slide">
+                    <ion-icon
+                        name="arrow-back-outline"
+                        aria-hidden="true"
+                    ></ion-icon>
                 </button>
             </div>
             <!-- dots -->
-            <div class="navigation-visiablitiy">
-                <div class="slide-dot active"></div>
-                <div class="slide-dot"></div>
-                <div class="slide-dot"></div>
+            <div class="navigation-visibility" aria-label="Slide indicators">
+                <div
+                    class="slide-dot active"
+                    aria-label="Slide 1"
+                    role="button"
+                    tabindex="0"
+                ></div>
+                <div
+                    class="slide-dot"
+                    aria-label="Slide 2"
+                    role="button"
+                    tabindex="0"
+                ></div>
+                <div
+                    class="slide-dot"
+                    aria-label="Slide 3"
+                    role="button"
+                    tabindex="0"
+                ></div>
             </div>
         </main>
-        <section class="section-live" id="live">
-            <h3 class="outline-heading">Live</h3>
+
+        <section class="section-live" id="live" aria-labelledby="live-heading">
+            <h3 class="outline-heading" id="live-heading">Live</h3>
             <div class="live-videoWrapper">
                 <iframe
                     width="560"
                     height="315"
                     src="https://www.youtube.com/embed/XIhRiTczV0A?si=8GOSGOLHE0oHa_dK"
-                    title="YouTube video player"
+                    title="Live YouTube video player"
                     frameborder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     referrerpolicy="strict-origin-when-cross-origin"
                     allowfullscreen
                 ></iframe>
             </div>
-            <a href="" class="live-link">انضم الان</a>
+            <a href="#" class="live-link">انضم الان</a>
         </section>
         <section class="section-explore" id="explore">
             <div class="explore-row">
