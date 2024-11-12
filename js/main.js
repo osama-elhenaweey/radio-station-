@@ -50,7 +50,7 @@ const observer = new IntersectionObserver(
 observer.observe(sectionHeroEl);
 observer.observe(sectionLiveEl);
 
-// slider
+// Slider
 const sliderContainer = document.querySelector(".section-hero");
 const nextBtn = document.querySelector(".next-btn");
 const prevBtn = document.querySelector(".prev-btn");
@@ -68,66 +68,59 @@ function resetActiveClasses() {
         slideIcon.classList.remove("active");
     });
 }
-// previous button functionality
-prevBtn.addEventListener("click", () => {
-    resetActiveClasses(); // Reset all active classes
-    // Remove the active class from the current slide
-    slides[slideNumber].classList.remove("active");
-    slideIcons[slideNumber].classList.remove("active");
 
-    // Move to the next slide
-    slideNumber++;
-
-    // If it's the last slide, loop back to the first
-    if (slideNumber >= numberOfSlides) {
-        slideNumber = 0;
-    }
-
-    // Add the active class to the new current slide
-    slides[slideNumber].classList.add("active");
-    slideIcons[slideNumber].classList.add("active");
-});
-// next button functionality
+// Next button functionality
 nextBtn.addEventListener("click", () => {
-    resetActiveClasses(); // Reset all active classes
-    // Remove the active class from the current slide
-    slides[slideNumber].classList.remove("active");
-    slideIcons[slideNumber].classList.remove("active");
-
-    // Move to the next slide
+    resetActiveClasses();
     slideNumber--;
-
-    // If it's the last slide, loop back to the first
     if (slideNumber < 0) {
         slideNumber = numberOfSlides - 1;
     }
-
-    // Add the active class to the new current slide
     slides[slideNumber].classList.add("active");
     slideIcons[slideNumber].classList.add("active");
 });
-//slider autoplay
+
+// previous button functionality
+prevBtn.addEventListener("click", () => {
+    resetActiveClasses();
+    slideNumber++;
+    if (slideNumber >= numberOfSlides) {
+        slideNumber = 0;
+    }
+    slides[slideNumber].classList.add("active");
+    slideIcons[slideNumber].classList.add("active");
+});
+// Dot click functionality
+slideIcons.forEach((dot, index) => {
+    dot.addEventListener("click", () => {
+        resetActiveClasses();
+        slideNumber = index; // Set slide number to the clicked dot's index
+        slides[slideNumber].classList.add("active");
+        slideIcons[slideNumber].classList.add("active");
+    });
+
+    // Make dots focusable and accessible
+    dot.addEventListener("keydown", (event) => {
+        if (event.key === "Enter" || event.key === " ") {
+            resetActiveClasses();
+            slideNumber = index;
+            slides[slideNumber].classList.add("active");
+            slideIcons[slideNumber].classList.add("active");
+        }
+    });
+});
+// Autoplay functionality
 let playSlider;
 let repeater = () => {
     playSlider = setInterval(function () {
-        resetActiveClasses(); // Reset all active classes
-        // Remove the active class from the current slide
-
-        slides[slideNumber].classList.remove("active");
-        slideIcons[slideNumber].classList.remove("active");
-
-        // Move to the next slide
-        slideNumber--;
-
-        // If it's the last slide, loop back to the first
-        if (slideNumber < 0) {
-            slideNumber = numberOfSlides - 1;
+        resetActiveClasses();
+        slideNumber++;
+        if (slideNumber >= numberOfSlides) {
+            slideNumber = 0;
         }
-
-        // Add the active class to the new current slide
         slides[slideNumber].classList.add("active");
         slideIcons[slideNumber].classList.add("active");
-    }, 4000);
+    }, 3000);
 };
 
 // Stop autoplay on mouseover

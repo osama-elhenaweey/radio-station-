@@ -151,10 +151,16 @@ body {
     width: 100%;
     height: 100%;
     clip-path: circle(0% at 0 50%);
+    /* transition: opacity 0.3s ease-in-out; */
 }
 .slider .slide.active {
     clip-path: circle(150% at 0 50%);
-    /* transition: 1s ease-in-out; */
+    opacity: 1;
+    /* transition: 0.3s ease-in-out; */
+}
+.slider .slide:not(.active) {
+    opacity: 0;
+    /* transform: translateX(-300px); */
 }
 .slider .slide img {
     position: absolute;
@@ -263,6 +269,7 @@ body:has(.slider:hover) .navigation,
     transform: translateY(-40px);
     margin: 0 1.5rem;
     border-radius: 15px;
+    cursor: pointer;
     transition: all 0.3s ease-in-out;
 }
 .navigation-visibility .slide-dot.active {
@@ -318,6 +325,7 @@ body:has(.slider:hover) .navigation,
     transition: all 0.5s ease-in-out;
     text-align: center;
     margin-top: -12rem;
+    cursor: pointer;
 }
 /* explore section */
 /* Explore Section */
@@ -389,16 +397,17 @@ body:has(.slider:hover) .navigation,
     font-size: 1.6rem;
     font-weight: 500;
     line-height: 1.6;
-    max-height: 8rem;
+    max-height: 8rem; /* Initial max-height */
     overflow: hidden;
     position: relative;
-    transition: max-height 0.4s ease;
+    transition: max-height 0.5s ease-in-out; /* Add smooth transition */
 }
 
 .explore-info-paragraph.active {
-    max-height: none;
+    max-height: 50rem; /* Adjust this max-height as needed */
 }
 
+/* Optional: Gradual fade-out effect for the "read more" gradient */
 .explore-info-paragraph::after {
     content: "";
     position: absolute;
@@ -411,9 +420,8 @@ body:has(.slider:hover) .navigation,
         rgba(248, 249, 250, 0),
         rgba(248, 249, 250, 1)
     );
-    display: block;
     opacity: 1;
-    transition: opacity 0.4s ease;
+    transition: opacity 0.5s ease-in-out; /* Adjust duration to match max-height transition */
 }
 
 .explore-info-paragraph.active::after {
@@ -432,7 +440,8 @@ body:has(.slider:hover) .navigation,
     font-weight: 900;
     cursor: pointer;
     color: var(--font-color-accent);
-    transition: color 0.3s ease;
+    transition: color 0.5s ease-in-out;
+    min-width: 8rem;
 }
 
 .see-more-btn:hover {
