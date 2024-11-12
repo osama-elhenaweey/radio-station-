@@ -112,7 +112,6 @@
         grid-template-columns: 1fr;
     }
     .explore-row .explore-row-info:last-child {
-        background-color: #0c8599;
         grid-row: 1 / 2;
     }
 }

@@ -156,5 +156,5 @@ sectionExploreEl.addEventListener("click", function (e) {
     const isActive = exploreInfoParagraph.classList.toggle("active");
 
     // Set the button text based on the active state
-    e.target.innerHTML = isActive ? "See More" : "See Less";
+    e.target.innerHTML = isActive ? "اقرا المزيد" : "اقرا اقل";
 });
