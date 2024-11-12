@@ -158,3 +158,95 @@ sectionExploreEl.addEventListener("click", function (e) {
     // Set the button text based on the active state
     e.target.innerHTML = isActive ? "اقرا المزيد" : "اقرا اقل";
 });
+// playlist
+const main_video = document.querySelector(".main-video .video-frame");
+const main_video_title = document.querySelector(".main-video-title");
+const video_playlist = document.querySelector(".video-playlist .videos");
+const playlist_details = document.querySelector(".playlist-details");
+
+let data = [
+    {
+        id: "a1",
+        title: "Course Introduction: Getting Started",
+        name: "https://www.youtube.com/watch?v=MnpuK0MK4yo&ab_channel=BeyondFireship",
+        duration: "2:47",
+    },
+    {
+        id: "a2",
+        title: "Working with Modules and npm in Node.js",
+        name: "https://www.youtube.com/watch?v=MnpuK0MK4yo&ab_channel=BeyondFireship",
+        duration: "2:45",
+    },
+    {
+        id: "a3",
+        title: "Working with Modules and npm in Node.js",
+        name: "https://www.youtube.com/watch?v=GqoPuVRMOqM&ab_channel=%D8%A3%D8%A8%D9%88%D8%A3%D8%B5%D8%A7%D9%8A%D9%84-AbuAsayel",
+        duration: "58:45",
+    },
+    // other video data...
+];
+
+// Calculate and display dynamic playlist details
+function calculateTotalDuration(data) {
+    let totalSeconds = 0;
+    data.forEach((video) => {
+        const [minutes, seconds] = video.duration.split(":").map(Number);
+        totalSeconds += minutes * 60 + seconds;
+    });
+    const totalMinutes = Math.floor(totalSeconds / 60);
+    const totalHours = Math.floor(totalMinutes / 60);
+    const remainingMinutes = totalMinutes % 60;
+    const remainingSeconds = totalSeconds % 60;
+
+    return `${
+        totalHours ? `${totalHours}h ` : ""
+    }${remainingMinutes}m ${remainingSeconds}s`;
+}
+
+const totalLessons = data.length;
+const totalDuration = calculateTotalDuration(data);
+playlist_details.innerHTML = `${totalLessons} lessons &nbsp; . &nbsp; ${totalDuration}`;
+
+// Generate the video list
+data.forEach((video, i) => {
+    let video_element = `
+        <div class="video" data-id="${video.id}">
+            <img src="./images/vid-images/play.svg" alt="">
+            <p>${i + 1 > 9 ? i + 1 : "0" + (i + 1)}. </p>
+            <h3 class="title">${video.title}</h3>
+            <p class="time">${video.duration}</p>
+        </div>
+    `;
+    video_playlist.innerHTML += video_element;
+});
+
+// Handle video click and playback
+let videos = document.querySelectorAll(".video");
+videos[0].classList.add("active");
+videos[0].querySelector("img").src = "./images/vid-images/pause.svg";
+
+videos.forEach((selected_video) => {
+    selected_video.onclick = () => {
+        videos.forEach((video) => {
+            video.classList.remove("active");
+            video.querySelector("img").src = "./images/vid-images/play.svg";
+        });
+
+        selected_video.classList.add("active");
+        selected_video.querySelector("img").src =
+            "./images/vid-images/pause.svg";
+
+        const match_video = data.find(
+            (video) => video.id == selected_video.dataset.id
+        );
+
+        if (match_video.name.includes("youtube.com")) {
+            const videoId = new URL(match_video.name).searchParams.get("v");
+            main_video.src = `https://www.youtube.com/embed/${videoId}`;
+        } else {
+            main_video.src = match_video.name;
+        }
+
+        main_video_title.innerHTML = match_video.title;
+    };
+});
