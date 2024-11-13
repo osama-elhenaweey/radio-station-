@@ -50,6 +50,32 @@ const observer = new IntersectionObserver(
 observer.observe(sectionHeroEl);
 observer.observe(sectionLiveEl);
 
+// script.js
+
+function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    const backToTopButton = document.getElementById("backToTop");
+
+    // Create an observer
+    const observer = new IntersectionObserver(
+        ([entry]) => {
+            if (entry.isIntersecting) {
+                backToTopButton.classList.add("show");
+            } else {
+                backToTopButton.classList.remove("show");
+            }
+        },
+        { threshold: 0.1 } // Adjust the threshold as needed
+    );
+
+    // Observe the #explore section
+    const exploreSection = document.getElementById("explore");
+    observer.observe(exploreSection);
+});
+
 // Slider
 const sliderContainer = document.querySelector(".section-hero");
 const nextBtn = document.querySelector(".next-btn");
