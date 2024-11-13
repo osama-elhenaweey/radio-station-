@@ -326,6 +326,7 @@ body:has(.slider:hover) .navigation,
     text-align: center;
     margin-top: -12rem;
     cursor: pointer;
+    z-index: 9;
 }
 /* explore section */
 /* Explore Section */

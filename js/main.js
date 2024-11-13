@@ -167,31 +167,31 @@ let data = [
     {
         id: "a1",
         title: "ما هو التسويق الرقمي؟",
-        name: "https://www.youtube.com/watch?v=HsQzZdd8oQ8",
+        name: "https://www.youtube.com/watch?v=g0alb1Ya1bY&ab_channel=EhabMesallum",
         duration: "10:02",
     },
     {
         id: "a2",
         title: "كيفية إنشاء استراتيجية تسويق إلكتروني فعالة",
-        name: "https://www.youtube.com/watch?v=rBfZ7ES_MhY",
+        name: "https://www.youtube.com/watch?v=UO-XOUX3aD4&ab_channel=SchoolOfMarketing",
         duration: "7:58",
     },
     {
         id: "a3",
         title: "أفضل طرق الإعلان على الإنترنت",
-        name: "https://www.youtube.com/watch?v=DbLGrby94uA",
+        name: "https://www.youtube.com/watch?v=BwzLXZ0Q8Ag&ab_channel=SocialCave",
         duration: "12:10",
     },
     {
         id: "a4",
         title: "أساسيات التسويق بالمحتوى",
-        name: "https://www.youtube.com/watch?v=sBZm2pZd8xI",
+        name: "https://www.youtube.com/watch?v=GMFb27PdB3I&ab_channel=CARTCODE--%D8%AF.%D8%AD%D8%B3%D9%86%D8%A7%D9%84%D9%85%D8%B1%D8%A7%D8%BA%D9%8A",
         duration: "8:42",
     },
     {
         id: "a5",
         title: "التسويق عبر وسائل التواصل الاجتماعي",
-        name: "https://www.youtube.com/watch?v=yIeEgbmtqSg",
+        name: "https://www.youtube.com/watch?v=1-LL7ySbRUE&ab_channel=SarahRefai",
         duration: "15:23",
     },
     {
