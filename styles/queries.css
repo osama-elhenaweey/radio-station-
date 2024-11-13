@@ -104,6 +104,9 @@
     .live-link {
         margin-top: 0rem;
     }
+    .playlist-container {
+        grid-template-columns: 1fr;
+    }
 }
 /* 550 */
 @media (max-width: 34em) {

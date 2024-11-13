@@ -166,23 +166,82 @@ const playlist_details = document.querySelector(".playlist-details");
 let data = [
     {
         id: "a1",
-        title: "Course Introduction: Getting Started",
-        name: "https://www.youtube.com/watch?v=MnpuK0MK4yo&ab_channel=BeyondFireship",
-        duration: "2:47",
+        title: "ما هو التسويق الرقمي؟",
+        name: "https://www.youtube.com/watch?v=HsQzZdd8oQ8",
+        duration: "10:02",
     },
     {
         id: "a2",
-        title: "Working with Modules and npm in Node.js",
-        name: "https://www.youtube.com/watch?v=MnpuK0MK4yo&ab_channel=BeyondFireship",
-        duration: "2:45",
+        title: "كيفية إنشاء استراتيجية تسويق إلكتروني فعالة",
+        name: "https://www.youtube.com/watch?v=rBfZ7ES_MhY",
+        duration: "7:58",
     },
     {
         id: "a3",
-        title: "Working with Modules and npm in Node.js",
-        name: "https://www.youtube.com/watch?v=GqoPuVRMOqM&ab_channel=%D8%A3%D8%A8%D9%88%D8%A3%D8%B5%D8%A7%D9%8A%D9%84-AbuAsayel",
-        duration: "58:45",
+        title: "أفضل طرق الإعلان على الإنترنت",
+        name: "https://www.youtube.com/watch?v=DbLGrby94uA",
+        duration: "12:10",
     },
-    // other video data...
+    {
+        id: "a4",
+        title: "أساسيات التسويق بالمحتوى",
+        name: "https://www.youtube.com/watch?v=sBZm2pZd8xI",
+        duration: "8:42",
+    },
+    {
+        id: "a5",
+        title: "التسويق عبر وسائل التواصل الاجتماعي",
+        name: "https://www.youtube.com/watch?v=yIeEgbmtqSg",
+        duration: "15:23",
+    },
+    {
+        id: "a6",
+        title: "كيفية فهم وتحليل سلوك المستهلك",
+        name: "https://www.youtube.com/watch?v=Xp6nM2GOW6M",
+        duration: "9:36",
+    },
+    {
+        id: "a6",
+        title: "كيفية فهم وتحليل سلوك المستهلك",
+        name: "https://www.youtube.com/watch?v=Xp6nM2GOW6M",
+        duration: "9:36",
+    },
+    {
+        id: "a6",
+        title: "كيفية فهم وتحليل سلوك المستهلك",
+        name: "https://www.youtube.com/watch?v=Xp6nM2GOW6M",
+        duration: "9:36",
+    },
+    {
+        id: "a6",
+        title: "كيفية فهم وتحليل سلوك المستهلك",
+        name: "https://www.youtube.com/watch?v=Xp6nM2GOW6M",
+        duration: "9:36",
+    },
+    {
+        id: "a6",
+        title: "كيفية فهم وتحليل سلوك المستهلك",
+        name: "https://www.youtube.com/watch?v=Xp6nM2GOW6M",
+        duration: "9:36",
+    },
+    {
+        id: "a6",
+        title: "كيفية فهم وتحليل سلوك المستهلك",
+        name: "https://www.youtube.com/watch?v=Xp6nM2GOW6M",
+        duration: "9:36",
+    },
+    {
+        id: "a6",
+        title: "كيفية فهم وتحليل سلوك المستهلك",
+        name: "https://www.youtube.com/watch?v=Xp6nM2GOW6M",
+        duration: "9:36",
+    },
+    {
+        id: "a6",
+        title: "كيفية فهم وتحليل سلوك المستهلك",
+        name: "https://www.youtube.com/watch?v=Xp6nM2GOW6M",
+        duration: "9:36",
+    },
 ];
 
 // Calculate and display dynamic playlist details
@@ -204,7 +263,7 @@ function calculateTotalDuration(data) {
 
 const totalLessons = data.length;
 const totalDuration = calculateTotalDuration(data);
-playlist_details.innerHTML = `${totalLessons} lessons &nbsp; . &nbsp; ${totalDuration}`;
+playlist_details.innerHTML = `عدد الفديوهات  : ${totalLessons} &nbsp; المدة : &nbsp; ${totalDuration}`;
 
 // Generate the video list
 data.forEach((video, i) => {

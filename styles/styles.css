@@ -477,14 +477,9 @@ body:has(.slider:hover) .navigation,
     color: var(--font-color-secondary);
 }
 
-@media screen and (max-width: 990px) {
-    .playlist-container {
-        grid-template-columns: 1fr;
-    }
-}
-
 /* Main Video Section */
 .main-video {
+    max-height: fit-content;
     background-color: var(--color-primary-darker);
     padding: 1rem;
     border-radius: 0.5rem;
@@ -526,24 +521,26 @@ body:has(.slider:hover) .navigation,
 }
 
 .playlist-title {
-    font-size: 1.2rem;
-    font-weight: 600;
+    font-size: 1.8rem;
+    font-weight: 800;
     color: var(--color-tertiary);
     padding: 0.5rem;
 }
 
 .playlist-details {
-    font-size: 0.9rem;
+    font-size: 1.6rem;
     color: var(--font-color-primary);
     padding: 0.5rem 1rem;
-    text-align: left;
+    text-align: right;
 }
 
 .videos {
-    height: 300px;
-    overflow-y: auto;
+    max-height: 40rem;
+
+    overflow-y: scroll;
     padding: 0.5rem;
-    background-color: var(--color-tertiary-darker);
+    background-color: var(--color-secondary-darker);
+
     border-radius: 0.5rem;
 }
 
@@ -562,7 +559,8 @@ body:has(.slider:hover) .navigation,
     align-items: center;
     padding: 0.8rem;
     margin: 0.5rem 0;
-    background-color: var(--color-secondary-opacity);
+    background-color: var(--color-secondary);
+    color: var(--color-tertiary);
     border-radius: 0.5rem;
     cursor: pointer;
     transition: background-color 0.3s;
@@ -573,7 +571,7 @@ body:has(.slider:hover) .navigation,
 }
 
 .video.active {
-    background-color: var(--color-primary-opacity);
+    background-color: var(--color-primary-darker);
     color: var(--font-color-primary);
 }
 
@@ -589,16 +587,18 @@ body:has(.slider:hover) .navigation,
 }
 
 .video p {
+    font-size: 1.2rem;
     margin: 0 1rem;
-    color: var(--font-color-secondary);
+    font-weight: 900;
+    color: var(--font-color-accent);
 }
 
 .video h3 {
     flex-grow: 1;
-    font-size: 1rem;
+    font-size: 1.6rem;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    font-weight: 400;
-    color: var(--font-color-secondary);
+    font-weight: 500;
+    color: var(--font-color-primary);
 }
