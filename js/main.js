@@ -85,67 +85,50 @@ const slideIcons = document.querySelectorAll(".slide-dot");
 const numberOfSlides = slides.length;
 let slideNumber = 0;
 
-// Function to reset active classes
-function resetActiveClasses() {
-    slides.forEach((slide) => {
-        slide.classList.remove("active");
-    });
-    slideIcons.forEach((slideIcon) => {
-        slideIcon.classList.remove("active");
-    });
+// Cache the active elements
+let currentSlide = slides[0];
+let currentDot = slideIcons[0];
+
+// Function to set the active slide and dot
+function setActiveSlide(newSlideIndex) {
+    // Remove active classes from current elements
+    currentSlide.classList.remove("active");
+    currentDot.classList.remove("active");
+
+    // Update slide number and cache the new elements
+    slideNumber = newSlideIndex;
+    currentSlide = slides[slideNumber];
+    currentDot = slideIcons[slideNumber];
+
+    // Add active classes to the new elements
+    currentSlide.classList.add("active");
+    currentDot.classList.add("active");
 }
 
 // Next button functionality
 nextBtn.addEventListener("click", () => {
-    resetActiveClasses();
-    slideNumber--;
-    if (slideNumber < 0) {
-        slideNumber = numberOfSlides - 1;
-    }
-    slides[slideNumber].classList.add("active");
-    slideIcons[slideNumber].classList.add("active");
+    setActiveSlide((slideNumber - 1 + numberOfSlides) % numberOfSlides);
 });
 
-// previous button functionality
+// Previous button functionality
 prevBtn.addEventListener("click", () => {
-    resetActiveClasses();
-    slideNumber++;
-    if (slideNumber >= numberOfSlides) {
-        slideNumber = 0;
-    }
-    slides[slideNumber].classList.add("active");
-    slideIcons[slideNumber].classList.add("active");
+    setActiveSlide((slideNumber + 1) % numberOfSlides);
 });
 // Dot click functionality
 slideIcons.forEach((dot, index) => {
-    dot.addEventListener("click", () => {
-        resetActiveClasses();
-        slideNumber = index; // Set slide number to the clicked dot's index
-        slides[slideNumber].classList.add("active");
-        slideIcons[slideNumber].classList.add("active");
-    });
-
-    // Make dots focusable and accessible
+    dot.addEventListener("click", () => setActiveSlide(index));
     dot.addEventListener("keydown", (event) => {
         if (event.key === "Enter" || event.key === " ") {
-            resetActiveClasses();
-            slideNumber = index;
-            slides[slideNumber].classList.add("active");
-            slideIcons[slideNumber].classList.add("active");
+            setActiveSlide(index);
         }
     });
 });
-// Autoplay functionality
+
+// Autoplay functionality using requestAnimationFrame
 let playSlider;
 let repeater = () => {
-    playSlider = setInterval(function () {
-        resetActiveClasses();
-        slideNumber++;
-        if (slideNumber >= numberOfSlides) {
-            slideNumber = 0;
-        }
-        slides[slideNumber].classList.add("active");
-        slideIcons[slideNumber].classList.add("active");
+    playSlider = setInterval(() => {
+        setActiveSlide((slideNumber - 1 + numberOfSlides) % numberOfSlides);
     }, 3000);
 };
 
