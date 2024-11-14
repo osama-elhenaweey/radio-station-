@@ -334,3 +334,31 @@ videos.forEach((selected_video) => {
         main_video_title.innerHTML = match_video.title;
     };
 });
+
+// iframes loading
+document.addEventListener("DOMContentLoaded", () => {
+    const iframes = document.querySelectorAll("iframe[data-src]");
+    const options = {
+        root: null,
+        rootMargin: "10px",
+        threshold: 0.25,
+    };
+
+    const loadIframe = (iframe) => {
+        iframe.src = iframe.getAttribute("data-src");
+        iframe.removeAttribute("data-src");
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                loadIframe(entry.target);
+                observer.unobserve(entry.target); // Stop observing once loaded
+            }
+        });
+    }, options);
+
+    iframes.forEach((iframe) => {
+        observer.observe(iframe);
+    });
+});
