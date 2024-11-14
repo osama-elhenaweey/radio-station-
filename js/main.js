@@ -323,7 +323,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const iframes = document.querySelectorAll("iframe[data-src]");
     const options = {
         root: null,
-        rootMargin: "10px",
+        rootMargin: "150px",
         threshold: 0.25,
     };
 
