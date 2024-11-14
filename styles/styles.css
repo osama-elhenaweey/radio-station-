@@ -432,7 +432,7 @@ body:has(.slider:hover) .navigation,
 }
 
 .explore-info-paragraph.active {
-    max-height: 50rem; /* Adjust this max-height as needed */
+    max-height: 70rem; /* Adjust this max-height as needed */
 }
 
 /* Optional: Gradual fade-out effect for the "read more" gradient */
