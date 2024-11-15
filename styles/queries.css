@@ -26,6 +26,9 @@
     .live-link {
         margin-top: -2rem;
     }
+    .section-about {
+        grid-template-columns: 1fr;
+    }
 }
 /* 700 */
 @media (max-width: 44em) {
@@ -116,5 +119,10 @@
     }
     .explore-row .explore-row-info:last-child {
         grid-row: 1 / 2;
+    }
+    #map {
+        max-height: 60%;
+        width: 95%;
+        margin-inline: 1rem;
     }
 }

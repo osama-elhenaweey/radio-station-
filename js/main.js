@@ -1,3 +1,42 @@
+// map
+// Initialize the map with no interactive controls (dragging, zooming)
+const markerCoordinates = [31.4272399, 31.6565633];
+const map = L.map("map", {
+    center: markerCoordinates,
+    zoom: 15,
+    zoomControl: false, // Remove zoom control buttons
+    dragging: false, // Disable dragging
+    scrollWheelZoom: false, // Disable zooming with scroll
+    doubleClickZoom: false, // Disable zooming with double-click
+    boxZoom: false, // Disable zooming with box selection
+    keyboard: false, // Disable keyboard navigation
+});
+
+// Add the OpenStreetMap tile layer
+L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+    maxZoom: 19,
+    attribution: "© OpenStreetMap contributors",
+}).addTo(map);
+
+// Add a marker with custom styling
+const marker = L.marker([31.4272399, 31.6565633], {
+    icon: L.icon({
+        iconUrl: "../images/marker-icon.png",
+        iconSize: [25, 40], // Custom size
+        iconAnchor: [15, 40], // Anchor the icon properly
+        popupAnchor: [0, -40], // Position popup above the marker
+    }),
+}).addTo(map);
+
+// Optional: Add a popup to the marker (if desired)
+marker.bindPopup("اضغط علي الخريطة لنقلك الي العنوان الخاص بنا");
+
+// Add click event to redirect to Google Maps at the marker's coordinates
+map.on("click", function () {
+    const googleMapsUrl = `https://www.google.com/maps?q=${markerCoordinates[0]},${markerCoordinates[1]}`;
+    window.open(googleMapsUrl, "_blank");
+});
+//  map end
 const navTog = document.querySelector(".header");
 const btn = document.querySelector(".btn-mobile-nav");
 btn.addEventListener("click", function () {
