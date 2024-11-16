@@ -11,6 +11,13 @@
             href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap"
             rel="stylesheet"
         />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+            integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
         <!-- map -->
         <link
             rel="stylesheet"
@@ -48,10 +55,10 @@
                     <li>
                         <a href="#courses" class="main-nav-link">الدورات</a>
                     </li>
+                    <li><a href="#about" class="main-nav-link">من نحن</a></li>
                     <li>
                         <a href="#contact" class="main-nav-link">تواصل معنا</a>
                     </li>
-                    <li><a href="#about" class="main-nav-link">من نحن</a></li>
                 </ul>
             </nav>
             <button
@@ -327,9 +334,74 @@
                 <div class="videos"></div>
             </aside>
         </section>
-        <section class="section-about" id="about">
-            <div id="map" style="height: 500px"></div>
-            <aside class="about__info"></aside>
+        <section class="about-section" id="about">
+            <div class="stats-container">
+                <!-- Stats Section -->
+                <div class="about-stats">
+                    <h2 class="about-heading">من نحن</h2>
+                    <p class="about-subheading">
+                        نحن وكالة إعلام في <span class="highlight">دمياط</span>
+                    </p>
+                    <p class="about-description">
+                        مرحبًا بكم في <strong>وكالة العبد للأعلام</strong>، مكان
+                        الإبداع حيث ندمج المهارة الفنية مع التفكير الاستراتيجي
+                        لتقديم تصاميم وحملات مؤثرة تساعد في تحقيق النجاح.
+                    </p>
+                    <div class="stats">
+                        <div class="stat-item">
+                            <h3 class="stat-value">12+</h3>
+                            <p class="stat-label">سنوات من الخبرة</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3 class="stat-value">4.8</h3>
+                            <p class="stat-label">متوسط تقييم المشاريع</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3 class="stat-value">200+</h3>
+                            <p class="stat-label">عملاء</p>
+                        </div>
+                    </div>
+                    <h3 class="process-heading">عملائنا</h3>
+                    <p class="process-description">
+                        في وكالتنا، نضمن تقديم حلول تصميم مميزة تتماشى مع رؤية
+                        علامتك التجارية وتحقق تفاعلًا قويًا مع جمهورك المستهدف.
+                    </p>
+                </div>
+            </div>
+            <div class="about-container">
+                <!-- Info Section -->
+                <aside class="about-info">
+                    <h2 class="about-headline">
+                        نحن نبني علامات تجارية تحدث فرقًا
+                    </h2>
+                    <p class="about-intro">
+                        في <strong>وكالة الإعلام الخاصة بك</strong>، نتخصص في
+                        صياغة القصص المؤثرة وتقديم حملات ذات تأثير كبير. فريقنا
+                        من الخبراء المبدعين ملتزم بمساعدة الشركات على التواصل مع
+                        جمهورها بطرق جديدة ومبتكرة.
+                    </p>
+                    <ul class="about-features">
+                        <li>
+                            <i class="fa-solid fa-diamond"></i>
+                            <strong>استراتيجيات تعتمد على البيانات</strong>:
+                            حملات مبنية على التحليلات لتحقيق أقصى النتائج.
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-diamond"></i>
+                            <strong>رواية قصص مبتكرة</strong>: محتوى يجذب وينخرط
+                            مع الجماهير.
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-diamond"></i>
+                            <strong>حملات موجهة نحو النتائج</strong>: تحقيق نجاح
+                            قابل للقياس لأهدافك.
+                        </li>
+                    </ul>
+                    <a href="#contact" class="cta-button">ابدأ الآن</a>
+                </aside>
+                <!-- Map Section -->
+                <div id="map" class="about-map"></div>
+            </div>
         </section>
 
         <script

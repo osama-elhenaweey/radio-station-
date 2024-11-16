@@ -25,6 +25,8 @@
     /* Gradients */
     --gradient-primary: linear-gradient(to top left, #e03131, #c02626);
     --gradient-secondary: linear-gradient(to top left, #212529, #1c1e21);
+    --color-shadow: rgba(0, 0, 0, 0.1);
+    --border-radius: 10px;
 }
 
 * {
@@ -629,12 +631,6 @@ body:has(.slider:hover) .navigation,
     font-weight: 500;
     color: var(--font-color-primary);
 }
-/* section about us
- */
-.section-about {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-}
 /* Style the map container */
 #map {
     max-height: 75%;
@@ -665,4 +661,152 @@ body:has(.slider:hover) .navigation,
 
 .leaflet-popup .leaflet-popup-tip {
     background-color: var(--color-secondary-darker);
+}
+
+/* General Section Styling */
+.about-section {
+    background-color: var(--color-secondary-darker);
+    color: #fff;
+    padding: 4rem 2rem;
+    line-height: 1.8;
+}
+/* Stats Section */
+.stats-container {
+    margin-top: 4rem;
+}
+
+.about-stats {
+    text-align: center;
+}
+
+.about-heading {
+    font-size: 3.2rem;
+    margin-bottom: 1.5rem;
+    color: var(--color-primary-darker);
+}
+
+.about-subheading {
+    font-size: 1.8rem;
+    color: var(--font-color-primary);
+    margin-bottom: 1.5rem;
+}
+
+.about-description,
+.process-description {
+    margin-bottom: 2rem;
+    font-size: 1.6rem;
+}
+
+.stats {
+    display: flex;
+    justify-content: center;
+    gap: 4rem;
+    margin: 2rem 0;
+}
+
+.stat-item {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 18rem;
+    height: 12rem;
+    border: 2px solid var(--color-secondary);
+    border-radius: 5px;
+}
+
+.stat-value {
+    font-size: 2.4rem;
+    color: var(--color-primary);
+}
+
+.stat-label {
+    font-size: 1.4rem;
+    color: var(--font-color-primary);
+}
+
+.process-heading {
+    font-size: 2rem;
+    margin-top: 2rem;
+    color: var(--font-color-primary);
+}
+
+/* About Container */
+.about-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+/* Info Section */
+.about-info {
+    flex: 1;
+
+    color: var(--font-color-primary);
+    padding: 4rem;
+}
+
+.about-headline {
+    font-size: 2.4rem;
+    margin-bottom: 1.5rem;
+    color: var(--color-primary);
+}
+
+.about-features {
+    list-style: none;
+    margin-top: 2rem;
+}
+.about-intro,
+.about-features li {
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+}
+.fa-diamond {
+    color: var(--color-primary);
+    margin-left: 1rem;
+}
+
+/* CTA Button */
+.cta-button {
+    display: inline-block;
+    margin-top: 3rem;
+    background-color: var(--color-primary);
+    color: var(--font-color-primary);
+    font-size: 1.6rem;
+    padding: 1.2rem 3rem;
+    text-decoration: none;
+    border-radius: var(--border-radius);
+    transition: background-color 0.3s ease-in-out;
+}
+
+.cta-button:hover {
+    background-color: var(--color-primary-darker);
+}
+
+/* Responsive Design */
+@media (max-width: 75rem) {
+    /* Tablets and smaller screens */
+    .about-container {
+        flex-direction: column;
+    }
+
+    .about-map {
+        height: 30rem;
+    }
+}
+
+@media (max-width: 48rem) {
+    /* Mobile and smaller devices */
+    .about-section {
+        padding: 2rem 1rem;
+    }
+
+    .about-map {
+        height: 25rem;
+    }
+
+    .cta-button {
+        font-size: 1.4rem;
+        padding: 1rem 2rem;
+    }
 }

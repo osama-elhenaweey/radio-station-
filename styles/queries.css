@@ -26,7 +26,7 @@
     .live-link {
         margin-top: -2rem;
     }
-    .section-about {
+    .about-container {
         grid-template-columns: 1fr;
     }
 }
@@ -113,6 +113,9 @@
 }
 /* 550 */
 @media (max-width: 34em) {
+    .navigation {
+        opacity: 1;
+    }
     .explore-row {
         display: grid;
         grid-template-columns: 1fr;
@@ -124,5 +127,21 @@
         max-height: 60%;
         width: 95%;
         margin-inline: 1rem;
+    }
+    .stats {
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    .about-description,
+    .process-description {
+        margin-bottom: 2rem;
+        font-size: 1.6rem;
+        max-width: 80%;
+        margin-inline: auto;
+    }
+    .about-features {
+        margin-top: 4rem;
     }
 }
