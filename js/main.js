@@ -101,7 +101,15 @@ document.addEventListener("DOMContentLoaded", () => {
     // Create an observer
     const observer = new IntersectionObserver(
         ([entry]) => {
-            if (entry.isIntersecting) {
+            if (entry.target === sectionHeroEl) {
+                isHeroInView = entry.isIntersecting;
+            }
+            if (entry.target === sectionLiveEl) {
+                isLiveInView = entry.isIntersecting;
+            }
+
+            // Only add the sticky class if both sections are out of view
+            if (!isHeroInView && !isLiveInView) {
                 backToTopButton.classList.add("show");
             } else {
                 backToTopButton.classList.remove("show");
@@ -110,9 +118,9 @@ document.addEventListener("DOMContentLoaded", () => {
         { threshold: 0.1 } // Adjust the threshold as needed
     );
 
-    // Observe the #explore section
-    const exploreSection = document.getElementById("explore");
-    observer.observe(exploreSection);
+    // Observe the  section
+    observer.observe(sectionHeroEl);
+    observer.observe(sectionLiveEl);
 });
 
 // Slider
