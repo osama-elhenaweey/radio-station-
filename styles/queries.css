@@ -13,6 +13,16 @@
         margin-top: -4rem;
     }
 }
+@media (max-width: 75rem) {
+    /* Tablets and smaller screens */
+    .about-container {
+        flex-direction: column;
+    }
+
+    .about-map {
+        height: 30rem;
+    }
+}
 /* 900 */
 
 @media (max-width: 56em) {
@@ -109,6 +119,18 @@
     }
     .playlist-container {
         grid-template-columns: 1fr;
+    }
+    .about-section {
+        padding: 2rem 1rem;
+    }
+
+    .about-map {
+        height: 25rem;
+    }
+
+    .cta-button {
+        font-size: 1.4rem;
+        padding: 1rem 2rem;
     }
 }
 /* 550 */

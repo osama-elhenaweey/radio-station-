@@ -679,7 +679,8 @@ body:has(.slider:hover) .navigation,
     text-align: center;
 }
 
-.about-heading {
+.about-heading,
+.contact-heading {
     font-size: 3.2rem;
     margin-bottom: 1.5rem;
     color: var(--color-primary-darker);
@@ -782,31 +783,61 @@ body:has(.slider:hover) .navigation,
 .cta-button:hover {
     background-color: var(--color-primary-darker);
 }
-
-/* Responsive Design */
-@media (max-width: 75rem) {
-    /* Tablets and smaller screens */
-    .about-container {
-        flex-direction: column;
-    }
-
-    .about-map {
-        height: 30rem;
-    }
+/* contact section */
+#contact {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    background-color: var(--color-secondary-darker);
+    padding: 2rem;
+    justify-content: center;
+    direction: rtl; /* Sets text direction to right-to-left */
+}
+.contact-heading {
+    width: 100%;
+    text-align: center;
 }
 
-@media (max-width: 48rem) {
-    /* Mobile and smaller devices */
-    .about-section {
-        padding: 2rem 1rem;
-    }
+.contact-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background-color: var(--color-secondary);
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 6px var(--color-shadow);
+    padding: 1.5rem;
+    max-width: 250px;
+    flex: 1;
+    min-width: 220px;
+}
 
-    .about-map {
-        height: 25rem;
-    }
+.contact-icon {
+    font-size: 2.5rem;
+    color: var(--color-primary);
+    margin-bottom: 1rem;
+}
 
-    .cta-button {
-        font-size: 1.4rem;
-        padding: 1rem 2rem;
-    }
+.contact-card h3 {
+    font-size: 1.5rem;
+    color: var(--font-color-primary);
+    margin: 0.5rem 0;
+}
+
+.contact-card p {
+    font-size: 1rem;
+    color: var(--font-color-primary);
+    margin-bottom: 1rem;
+}
+
+.contact-card a {
+    font-size: 1rem;
+    color: var(--color-primary);
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.contact-card a:hover {
+    color: var(--color-primary-darker);
 }
