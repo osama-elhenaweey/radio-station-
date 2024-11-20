@@ -76,7 +76,27 @@ body {
     display: flex;
     z-index: 99999999999999999999;
 }
+/* scrollbar  */
 
+::-webkit-scrollbar {
+    width: 14px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--color-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--color-primary-opacity);
+    border-radius: var(--border-radius);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--color-primary-darker);
+    cursor: grab;
+}
+
+/* header */
 .header {
     display: flex;
     align-items: center;
