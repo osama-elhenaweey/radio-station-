@@ -826,9 +826,9 @@ body:has(.slider:hover) .navigation,
     border-radius: var(--border-radius);
     box-shadow: 0 4px 6px var(--color-shadow);
     padding: 1.5rem;
-    max-width: 250px;
+    max-width: 28rem;
     flex: 1;
-    min-width: 220px;
+    min-width: 24rem;
 }
 
 .contact-icon {
