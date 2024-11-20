@@ -789,9 +789,8 @@ body:has(.slider:hover) .navigation,
     flex-wrap: wrap;
     gap: 2rem;
     background-color: var(--color-secondary-darker);
-    padding: 2rem;
+    padding: 0rem 2rem 8rem;
     justify-content: center;
-    direction: rtl; /* Sets text direction to right-to-left */
 }
 .contact-heading {
     width: 100%;
@@ -813,31 +812,46 @@ body:has(.slider:hover) .navigation,
 }
 
 .contact-icon {
-    font-size: 2.5rem;
+    font-size: 2.8rem;
     color: var(--color-primary);
     margin-bottom: 1rem;
 }
 
 .contact-card h3 {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     color: var(--font-color-primary);
-    margin: 0.5rem 0;
+    margin: 1rem 0;
 }
 
 .contact-card p {
-    font-size: 1rem;
+    font-size: 1.4rem;
     color: var(--font-color-primary);
     margin-bottom: 1rem;
 }
 
 .contact-card a {
-    font-size: 1rem;
+    font-size: 1.2rem;
     color: var(--color-primary);
     text-decoration: none;
+    margin-top: auto;
     font-weight: bold;
     transition: color 0.3s;
 }
 
 .contact-card a:hover {
     color: var(--color-primary-darker);
+}
+/* footer */
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 5rem;
+    background-color: var(--color-primary-darker);
+    padding: 2rem;
+    color: var(--font-color-secondary);
+    font-size: 1.4rem;
+    font-weight: 700;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 }
