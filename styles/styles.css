@@ -74,7 +74,7 @@ body {
 }
 #backToTop.show {
     display: flex;
-    z-index: 99999999999999999999;
+    z-index: 999;
 }
 /* scrollbar  */
 
@@ -681,6 +681,9 @@ body:has(.slider:hover) .navigation,
 
 .leaflet-popup .leaflet-popup-tip {
     background-color: var(--color-secondary-darker);
+}
+.leaflet-control-attribution {
+    display: none;
 }
 
 /* General Section Styling */
